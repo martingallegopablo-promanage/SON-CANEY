@@ -116,34 +116,6 @@ export const DEFAULT_EVENTS = [
     cta_type: 'info',
     display_order: 4,
     is_active: true
-  },
-  {
-    id: 'event-rum-tasting',
-    slug: 'event-rum-tasting',
-    title: 'Noche de Ron & Rumba (Cuban Rum Tasting & Live Rumba)',
-    subtitle: 'Guided tasting of 4 aged Havana Club rums + live percussion & Cuban street food',
-    date_text: 'Every Tuesday Evening',
-    time: '7:00 PM – 10:00 PM',
-    badge: 'TASTING & LIVE SHOW • £18.50',
-    badge_variant: 'ticketed-amber',
-    badge_color: 'bg-amber-600 text-white',
-    badge_short: '£18.50 Rum Flight',
-    badge_short_color: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
-    price: 18.50,
-    is_ticketed: true,
-    image_url: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800&auto=format&fit=crop&q=80',
-    description:
-      'An exclusive sensory journey through Cuba\'s rich rum heritage. Led by our master cantinero, you will taste four vintage Havana Club expressions (3 Años, 7 Años, Selección de Maestros, and Cuban Smoky), paired with crispy mariquitas, artisanal Cuban empanadas, and authentic live Afro-Cuban guaguancó rumba percussion.',
-    highlights: [
-      '4-flight guided tasting of aged vintage Cuban rums',
-      'Includes 2 handcrafted artisan Cuban empanadas & mariquitas',
-      'Live Afro-Cuban rumba and batá drum performance',
-      'Exclusive 15% discount on whole rum bottles to take home'
-    ],
-    cta_text: 'Buy Tasting Ticket (£18.50)',
-    cta_type: 'ticket',
-    display_order: 5,
-    is_active: true
   }
 ];
 
