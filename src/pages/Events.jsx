@@ -167,7 +167,7 @@ export default function Events() {
                 className="bg-card rounded-2xl sm:rounded-3xl border border-border/80 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  {/* Event Image & Header (Tappable on Mobile to Expand/Collapse) */}
+                  {/* Event Image & Header (Tappable / Clickable to Expand/Collapse) */}
                   <div
                     role="button"
                     tabIndex={0}
@@ -179,7 +179,7 @@ export default function Events() {
                       }
                     }}
                     aria-expanded={isExpanded}
-                    className="relative h-56 sm:h-64 w-full overflow-hidden bg-muted cursor-pointer md:cursor-default select-none active:scale-[0.99] md:active:scale-100 transition-transform touch-manipulation"
+                    className="relative h-56 sm:h-64 w-full overflow-hidden bg-muted cursor-pointer select-none active:scale-[0.99] transition-transform touch-manipulation"
                   >
                     <img
                       src={evt.image}
@@ -226,12 +226,12 @@ export default function Events() {
                         {evt.title}
                       </h3>
 
-                      {/* Mobile Expand / Collapse Indicator */}
-                      <div className="flex items-center justify-between text-xs font-medium text-white/90 pt-1.5 mt-1.5 border-t border-white/20 md:hidden">
-                        <span className="text-[11px] font-semibold text-amber-300/90">
-                          {isExpanded ? 'Tap to collapse details' : 'Tap to see details & book'}
+                      {/* Expand / Collapse Indicator (Visible on both Web & Mobile) */}
+                      <div className="flex items-center justify-between text-xs font-medium text-white/90 pt-1.5 mt-1.5 border-t border-white/20">
+                        <span className="text-[11px] sm:text-xs font-semibold text-amber-300/90">
+                          {isExpanded ? 'Click or tap to collapse details' : 'Click or tap to see details & book'}
                         </span>
-                        <span className="flex items-center gap-1 text-[11px] bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded-full font-bold">
+                        <span className="flex items-center gap-1.5 text-[11px] sm:text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm px-2.5 py-0.5 rounded-full font-bold transition-colors">
                           {isExpanded ? 'Less' : 'Details'}
                           <ChevronDown
                             className={`w-3.5 h-3.5 transition-transform duration-300 ${
@@ -243,10 +243,10 @@ export default function Events() {
                     </div>
                   </div>
 
-                  {/* Collapsible Lower Section on Mobile (Always Visible on Desktop) */}
+                  {/* Collapsible Lower Section (Subtitle, Description, Highlights & Booking) */}
                   <div
                     className={`transition-all duration-300 ease-in-out ${
-                      isExpanded ? 'block animate-in fade-in-50 slide-in-from-top-2' : 'hidden md:block'
+                      isExpanded ? 'block animate-in fade-in-50 slide-in-from-top-2' : 'hidden'
                     }`}
                   >
                     {/* Body Content */}
