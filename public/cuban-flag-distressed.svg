@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <!-- Turbulence filters for aged plaster and worn fabric effect -->
+    <filter id="wallGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0" result="coloredNoise" />
+      <feBlend mode="multiply" in="SourceGraphic" in2="coloredNoise" />
+    </filter>
+
+    <filter id="weatheredTexture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" result="roughness" />
+      <feDisplacementMap in="SourceGraphic" in2="roughness" scale="5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <!-- Gradients for vintage faded look -->
+    <linearGradient id="blueStripe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d386d" />
+      <stop offset="50%" stop-color="#162e5c" />
+      <stop offset="100%" stop-color="#112448" />
+    </linearGradient>
+
+    <linearGradient id="agedWhiteStripe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ded4be" />
+      <stop offset="50%" stop-color="#d3c8af" />
+      <stop offset="100%" stop-color="#c4b89c" />
+    </linearGradient>
+
+    <linearGradient id="redTriangle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9b222a" />
+      <stop offset="50%" stop-color="#841a22" />
+      <stop offset="100%" stop-color="#691218" />
+    </linearGradient>
+
+    <linearGradient id="vignetteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Base Flag Layer -->
+  <g filter="url(#weatheredTexture)">
+    <!-- 5 Horizontal stripes (each 180px high) -->
+    <rect x="0" y="0" width="1600" height="180" fill="url(#blueStripe)" />
+    <rect x="0" y="180" width="1600" height="180" fill="url(#agedWhiteStripe)" />
+    <rect x="0" y="360" width="1600" height="180" fill="url(#blueStripe)" />
+    <rect x="0" y="540" width="1600" height="180" fill="url(#agedWhiteStripe)" />
+    <rect x="0" y="720" width="1600" height="180" fill="url(#blueStripe)" />
+
+    <!-- Equilateral Red Triangle -->
+    <polygon points="0,0 720,450 0,900" fill="url(#redTriangle)" />
+
+    <!-- Weathered White Star in triangle -->
+    <!-- Center: cx=240, cy=450, R=105, r=42 -->
+    <polygon
+      points="240,345 264.7,415.7 339.9,417.6 279.7,463.3 301.7,535.5 240,492.3 178.3,535.5 200.3,463.3 140.1,417.6 215.3,415.7"
+      fill="#f3ecd8"
+      opacity="0.92"
+    />
+  </g>
+
+  <!-- Distressed Cracks, Peeling Paint & Weathered Scratches Overlay -->
+  <g opacity="0.45" stroke="#1a140d" stroke-linecap="round" fill="none">
+    <!-- Weathering cracks across red triangle -->
+    <path d="M40 80 Q120 150 180 130 T280 220 T360 290" stroke-width="2.5" />
+    <path d="M220 170 Q250 240 210 320 T240 430" stroke-width="1.8" />
+    <path d="M80 500 Q150 480 220 540 T310 600" stroke-width="2" />
+    <path d="M300 400 Q390 420 450 380 T560 440" stroke-width="2.2" />
+    <path d="M120 750 Q220 700 320 760 T460 720" stroke-width="3" />
+    <path d="M180 820 Q300 790 380 840" stroke-width="1.5" />
+
+    <!-- Weathering scratches across blue & white stripes -->
+    <path d="M520 120 Q680 90 850 150 T1100 130 T1350 190" stroke-width="2" opacity="0.6" />
+    <path d="M780 260 Q920 310 1150 280 T1420 330" stroke-width="2.8" opacity="0.5" />
+    <path d="M640 490 Q820 440 980 520 T1220 480 T1500 540" stroke-width="3.2" opacity="0.7" />
+    <path d="M720 660 Q890 710 1080 670 T1340 720 T1550 690" stroke-width="2.5" opacity="0.6" />
+    <path d="M900 820 Q1060 780 1240 840 T1480 810" stroke-width="3.5" opacity="0.5" />
+  </g>
+
+  <!-- Distressed Stucco Specks & Peeling Paint Patches -->
+  <g fill="#2b2015" opacity="0.32">
+    <ellipse cx="380" cy="280" rx="35" ry="12" />
+    <ellipse cx="540" cy="190" rx="48" ry="18" />
+    <ellipse cx="290" cy="620" rx="42" ry="15" />
+    <ellipse cx="780" cy="380" rx="60" ry="22" />
+    <ellipse cx="1120" cy="210" rx="75" ry="28" />
+    <ellipse cx="1280" cy="560" rx="90" ry="32" />
+    <ellipse cx="940" cy="740" rx="65" ry="20" />
+    <ellipse cx="1450" cy="410" rx="50" ry="18" />
+    <ellipse cx="180" cy="460" rx="28" ry="10" />
+  </g>
+
+  <!-- Additional Faded White Paint Wear Patches -->
+  <g fill="#ffffff" opacity="0.18">
+    <ellipse cx="440" cy="410" rx="60" ry="25" />
+    <ellipse cx="880" cy="160" rx="85" ry="30" />
+    <ellipse cx="1200" cy="450" rx="110" ry="40" />
+    <ellipse cx="650" cy="710" rx="70" ry="25" />
+    <ellipse cx="1380" cy="780" rx="80" ry="28" />
+  </g>
+
+  <!-- Wall grain texture overlay -->
+  <rect x="0" y="0" width="1600" height="900" filter="url(#wallGrain)" fill="#8a7352" opacity="0.38" style="mix-blend-mode: overlay;" />
+
+  <!-- Vignette dark border for contrast -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#vignetteGrad)" />
+</svg>

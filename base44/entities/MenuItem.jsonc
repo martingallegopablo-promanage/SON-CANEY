@@ -1,0 +1,45 @@
+{
+  "name": "MenuItem",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Item name" },
+    "description": { "type": "string", "description": "Item description" },
+    "price": { "type": "number", "description": "Base price" },
+    "image_url": { "type": "string", "description": "Item image URL" },
+    "category": { "type": "string", "description": "Category name" },
+    "is_available": { "type": "boolean", "default": true, "description": "Whether item is available" },
+    "is_featured": { "type": "boolean", "default": false, "description": "Featured on homepage" },
+    "calories": { "type": "number", "description": "Calorie count" },
+    "prep_time_minutes": { "type": "number", "description": "Estimated prep time in minutes" },
+    "tags": { "type": "array", "items": { "type": "string" }, "description": "Tags like spicy, new, bestseller, vegetarian" },
+    "customizations": {
+      "type": "array",
+      "description": "Available customization groups",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group_name": { "type": "string" },
+          "required": { "type": "boolean" },
+          "max_select": { "type": "number" },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "price_add": { "type": "number" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["name", "price", "category"],
+  "rls": {
+    "create": { "user_condition": { "role": "admin" } },
+    "read": {},
+    "update": { "user_condition": { "role": "admin" } },
+    "delete": { "user_condition": { "role": "admin" } }
+  }
+}
